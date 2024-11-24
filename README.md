@@ -1,3 +1,7 @@
+# gtest_gcovr_framework
+
+Framework for software testing using Google Test and Gcov tools in Windows + CMake + MinGW64 environment, placing the project files and test cases in the corresponding paths for testing.
+
 ## Required Environment
 
 - Use the latest version of GCC (I used 14.2; version 8.1 on Windows with MinGW had multithreading issues, which were resolved after upgrading).
