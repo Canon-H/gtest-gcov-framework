@@ -1,0 +1,5 @@
+E:/MyGithub/gtest_gcovr_framework/build/CMakeFiles/edit_cache.dir
+E:/MyGithub/gtest_gcovr_framework/build/CMakeFiles/rebuild_cache.dir
+E:/MyGithub/gtest_gcovr_framework/build/src/main/CMakeFiles/RES.dir
+E:/MyGithub/gtest_gcovr_framework/build/src/main/CMakeFiles/edit_cache.dir
+E:/MyGithub/gtest_gcovr_framework/build/src/main/CMakeFiles/rebuild_cache.dir

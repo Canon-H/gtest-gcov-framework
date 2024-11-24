@@ -1,0 +1,58 @@
+        -:    0:Source:E:/GoogleTest/Project/src/funcs/sample2.cpp
+        -:    0:Graph:sample2.gcno
+        -:    0:Data:sample2.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright 2005, Google Inc.
+        -:    2:// All rights reserved.
+        -:    3://
+        -:    4:// Redistribution and use in source and binary forms, with or without
+        -:    5:// modification, are permitted provided that the following conditions are
+        -:    6:// met:
+        -:    7://
+        -:    8://     * Redistributions of source code must retain the above copyright
+        -:    9:// notice, this list of conditions and the following disclaimer.
+        -:   10://     * Redistributions in binary form must reproduce the above
+        -:   11:// copyright notice, this list of conditions and the following disclaimer
+        -:   12:// in the documentation and/or other materials provided with the
+        -:   13:// distribution.
+        -:   14://     * Neither the name of Google Inc. nor the names of its
+        -:   15:// contributors may be used to endorse or promote products derived from
+        -:   16:// this software without specific prior written permission.
+        -:   17://
+        -:   18:// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        -:   19:// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        -:   20:// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        -:   21:// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        -:   22:// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        -:   23:// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        -:   24:// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        -:   25:// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        -:   26:// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        -:   27:// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        -:   28:// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        -:   29:
+        -:   30:// A sample program demonstrating using Google C++ testing framework.
+        -:   31:
+        -:   32:#include "sample2.h"
+        -:   33:
+        -:   34:#include <string.h>
+        -:   35:
+        -:   36:// Clones a 0-terminated C string, allocating memory using new.
+        6:   37:const char* MyString::CloneCString(const char* a_c_string) {
+        6:   38:  if (a_c_string == nullptr) return nullptr;
+        -:   39:
+        5:   40:  const size_t len = strlen(a_c_string);
+        5:   41:  char* const clone = new char[len + 1];
+        5:   42:  memcpy(clone, a_c_string, len + 1);
+        -:   43:
+        5:   44:  return clone;
+        -:   45:}
+        -:   46:
+        -:   47:// Sets the 0-terminated C string this MyString object
+        -:   48:// represents.
+        6:   49:void MyString::Set(const char* a_c_string) {
+        -:   50:  // Makes sure this works when c_string == c_string_
+        6:   51:  const char* const temp = MyString::CloneCString(a_c_string);
+        6:   52:  delete[] c_string_;
+        6:   53:  c_string_ = temp;
+        6:   54:}

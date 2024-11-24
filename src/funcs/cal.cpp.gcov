@@ -1,0 +1,17 @@
+        -:    0:Source:E:/GoogleTest/Project/src/funcs/cal.cpp
+        -:    0:Graph:cal.gcno
+        -:    0:Data:cal.gcda
+        -:    0:Runs:1
+        -:    1:#include "cal.h"
+        -:    2:
+        3:    3:int Calculator::add(int a, int b) {
+        3:    4:    return a + b;
+        -:    5:}
+        -:    6:
+        3:    7:int Calculator::subtract(int a, int b) {
+        3:    8:    return a - b;
+        -:    9:}
+        -:   10:
+        3:   11:int Calculator::multiply(int a, int b) {
+        3:   12:    return a * b;
+        -:   13:}

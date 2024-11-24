@@ -1,0 +1,53 @@
+[==========] Running 13 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from CalculatorTest
+[ RUN      ] CalculatorTest.AddTest
+E:\MyGithub\gtest_gcovr_framework\src\tests\test1.cpp:8: Failure
+Expected equality of these values:
+  calc.add(3, 4)
+    Which is: 7
+  5
+
+[  FAILED  ] CalculatorTest.AddTest (0 ms)
+[ RUN      ] CalculatorTest.SubtractTest
+[       OK ] CalculatorTest.SubtractTest (0 ms)
+[ RUN      ] CalculatorTest.MultiplyTest
+[       OK ] CalculatorTest.MultiplyTest (0 ms)
+[----------] 3 tests from CalculatorTest (0 ms total)
+
+[----------] 4 tests from MyString
+[ RUN      ] MyString.DefaultConstructor
+[       OK ] MyString.DefaultConstructor (0 ms)
+[ RUN      ] MyString.ConstructorFromCString
+[       OK ] MyString.ConstructorFromCString (0 ms)
+[ RUN      ] MyString.CopyConstructor
+[       OK ] MyString.CopyConstructor (0 ms)
+[ RUN      ] MyString.Set
+[       OK ] MyString.Set (0 ms)
+[----------] 4 tests from MyString (0 ms total)
+
+[----------] 3 tests from FactorialTest
+[ RUN      ] FactorialTest.Negative
+[       OK ] FactorialTest.Negative (0 ms)
+[ RUN      ] FactorialTest.Zero
+[       OK ] FactorialTest.Zero (0 ms)
+[ RUN      ] FactorialTest.Positive
+[       OK ] FactorialTest.Positive (0 ms)
+[----------] 3 tests from FactorialTest (0 ms total)
+
+[----------] 3 tests from IsPrimeTest
+[ RUN      ] IsPrimeTest.Negative
+[       OK ] IsPrimeTest.Negative (0 ms)
+[ RUN      ] IsPrimeTest.Trivial
+[       OK ] IsPrimeTest.Trivial (0 ms)
+[ RUN      ] IsPrimeTest.Positive
+[       OK ] IsPrimeTest.Positive (0 ms)
+[----------] 3 tests from IsPrimeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 4 test suites ran. (0 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] CalculatorTest.AddTest
+
+ 1 FAILED TEST

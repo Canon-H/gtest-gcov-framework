@@ -1,0 +1,70 @@
+        -:    0:Source:E:/GoogleTest/Project/src/funcs/sample1.cpp
+        -:    0:Graph:sample1.gcno
+        -:    0:Data:sample1.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright 2005, Google Inc.
+        -:    2:// All rights reserved.
+        -:    3://
+        -:    4:// Redistribution and use in source and binary forms, with or without
+        -:    5:// modification, are permitted provided that the following conditions are
+        -:    6:// met:
+        -:    7://
+        -:    8://     * Redistributions of source code must retain the above copyright
+        -:    9:// notice, this list of conditions and the following disclaimer.
+        -:   10://     * Redistributions in binary form must reproduce the above
+        -:   11:// copyright notice, this list of conditions and the following disclaimer
+        -:   12:// in the documentation and/or other materials provided with the
+        -:   13:// distribution.
+        -:   14://     * Neither the name of Google Inc. nor the names of its
+        -:   15:// contributors may be used to endorse or promote products derived from
+        -:   16:// this software without specific prior written permission.
+        -:   17://
+        -:   18:// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        -:   19:// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        -:   20:// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        -:   21:// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        -:   22:// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        -:   23:// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        -:   24:// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        -:   25:// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        -:   26:// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        -:   27:// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        -:   28:// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        -:   29:
+        -:   30:// A sample program demonstrating using Google C++ testing framework.
+        -:   31:
+        -:   32:#include "sample1.h"
+        -:   33:
+        -:   34:// Returns n! (the factorial of n).  For negative n, n! is defined to be 1.
+        8:   35:int Factorial(int n) {
+        8:   36:  int result = 1;
+       22:   37:  for (int i = 1; i <= n; i++) {
+       14:   38:    result *= i;
+        -:   39:  }
+        -:   40:
+        8:   41:  return result;
+        -:   42:}
+        -:   43:
+        -:   44:// Returns true if and only if n is a prime number.
+       11:   45:bool IsPrime(int n) {
+        -:   46:  // Trivial case 1: small numbers
+       11:   47:  if (n <= 1) return false;
+        -:   48:
+        -:   49:  // Trivial case 2: even numbers
+        6:   50:  if (n % 2 == 0) return n == 2;
+        -:   51:
+        -:   52:  // Now, we have that n is odd and n >= 3.
+        -:   53:
+        -:   54:  // Try to divide n by every odd number i, starting from 3
+        4:   55:  for (int i = 3;; i += 2) {
+        -:   56:    // We only have to try i up to the square root of n
+        4:   57:    if (i > n / i) break;
+        -:   58:
+        -:   59:    // Now, we have i <= n/i < n.
+        -:   60:    // If n is divisible by i, n is not prime.
+       1*:   61:    if (n % i == 0) return false;
+        -:   62:  }
+        -:   63:
+        -:   64:  // n has no integer factor in the range (1, n), and thus is prime.
+        3:   65:  return true;
+        -:   66:}
